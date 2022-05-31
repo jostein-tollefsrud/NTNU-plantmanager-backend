@@ -1,17 +1,14 @@
-# Plant Manager - Backend
+# NTNU-plantmanager
 
-> This is the backend for a plant manager project.
+> This is the final repository for a plant manager project.
 
-[GitHub repo of this project](https://github.com/jostein-tollefsrud/fullstack-plantmanager-backend)
+[Frontend repository of this project](https://github.com/jostein-tollefsrud/NTNU-plantmanager-frontend)
 
 ## Table of contents
 
 -   [General info](#general-info)
 -   [Technologies](#technologies)
 -   [Setup](#setup)
--   [Features](#features)
--   [Status](#status)
--   [Inspiration](#inspiration)
 -   [Contact](#contact)
 
 &nbsp;
@@ -19,7 +16,7 @@
 ## General info
 
 The department of design needs an administrative tool to monitor the state of the
-plants and its health. This project takes care of the backend API. In this project we only setup for users, not the plants.
+plants and its health. This project takes care of both backend API and the frontend.
 
 &nbsp;
 
@@ -41,62 +38,45 @@ plants and its health. This project takes care of the backend API. In this proje
 
 ## Setup
 
-This express application requires a `.env` file. In the root of the project, create a `.env` file and put the following into it:
+This express application requires a `.env` file. In the root of the backend folder, create a `.env` file and put the following into it:
 
 ```
 NODE_ENV=development
 DB_STRING=mongodb://localhost:27017/plant-manager
 DB_STRING_PROD=<your production database string>
-PRIVATE_KEY=<super secret key here>
+PRIVATE_KEY=thisIsTheSupersecretKey
+
+KEY_ID=AKIA5VX4Z22MJTUVZBRR
+SECRET=VHuudSut4qhUa6q1EnSYEyXL+GKZTo1fNRiyxNx4
 ```
 
-You need to run both Mongo DB Compass and MongoDB Community Edition. 
-
-[Download MongoDB from here](https://www.mongodb.com/try/download/compass).
+You need to run both Mongo DB Compass and MongoDB Community Edition.
 
 [Download MongoDB Community Edition from here](https://docs.mongodb.com/manual/administration/install-community/).
 
 ```
-# Install all the dependencies needed to run this application
+# Install all the dependencies needed to run this application in both the frontend folder and the backend folder
 $ npm install
 
-# Start the Express server (http://localhost:5000)
+# Run the seeder from the backend directory to insert users and plants
+$ node seederScript.js
+
+#
+# Start 2 terminals and do the following:
+#
+
+# Start the Express server from the backend folder (http://localhost:5000)
 $ nodemon app.js
+
+# Start the React app from the front end folder
+$ npm run start
 ```
 
-&nbsp;
+The users all have the same password (Password123)
 
-## Code Examples
-
-Show examples of usage:
-`put-your-code-here`
-
-&nbsp;
-
-## Features
-
-List of features ready and TODOs for future development
-
--   Awesome feature 1
--   Awesome feature 2
--   Awesome feature 3
-
-To-do list:
-
--   Wow improvement to be done 1
--   Wow improvement to be done 2
-
-&nbsp;
-
-## Status
-
-Project is: _in progress_, _finished_, _no longer continue_ and why?
-
-&nbsp;
-
-## Inspiration
-
-Add here credits. Project inspired by..., based on...
+-   Ola Nordmann - ola@email.com (manager)
+-   Kari Nordmann - kari@email.com (gardener)
+-   Nils Nordmann - nils@email.com (user)
 
 &nbsp;
 
@@ -106,3 +86,4 @@ Created by [Jostein Tollefsrud](https://github.com/jostein-tollefsrud)
 and [Ida Therese Hongset Trøan](https://github.com/Idahpews)
 
 Feel free to contact us!
+
